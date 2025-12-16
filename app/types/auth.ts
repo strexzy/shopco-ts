@@ -1,5 +1,3 @@
-import type { PropsWithChildren } from "react";
-
 export interface AuthCredentials {
   email: string;
   password: string;

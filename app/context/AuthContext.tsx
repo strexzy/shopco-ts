@@ -12,7 +12,7 @@ import type {
   AuthCredentials,
   RegisterCredentials,
 } from "~/types/auth";
-import { authApi } from "~/features/auth/api";
+import { authApi } from "~/lib/api";
 import { safeAxiosError } from "~/lib/safe-axios-error";
 
 const AuthContext = createContext<AuthContext | undefined>(undefined);
@@ -41,14 +41,14 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     email,
     firstName,
     password,
-    passwordConfim,
+    passwordConfirm,
   }: RegisterCredentials) => {
     try {
       const { data } = await authApi.register({
         email,
         firstName,
         password,
-        passwordConfim,
+        passwordConfirm,
       });
       localStorage.setItem("authToken", data.authToken);
       setCurrentUser(data.user);

@@ -1,34 +1,51 @@
 import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "~/components/ui/card";
-import {
   Form,
   FormItem,
   FormLabel,
   FormControl,
   FormField,
-  FormDescription,
+  FormMessage,
 } from "~/components/ui/form";
 import { useForm } from "react-hook-form";
 import { useAuth } from "~/context/AuthContext";
-import type { AuthCredentials } from "~/types/auth";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const loginSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(6, "Please, input valid email address")
+    .email("Invalid email format"),
+  password: z
+    .string()
+    .min(6, "Password must be at least 6 characters long")
+    .regex(/[A-Z]/, {
+      message: "Password must contain at least one uppercase letter.",
+    })
+    .regex(/[a-z]/, {
+      message: "Password must contain at least one lowercase letter.",
+    })
+    .regex(/[0-9]/, { message: "Password must contain at least one number." })
+    .regex(/[\W_]/, {
+      message: "Password must contain at least one special character.",
+    }),
+});
 
 const FormLogin = () => {
   const { login } = useAuth();
-  const onSubmit = ({ email, password }: AuthCredentials) => {
+
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: { email: "", password: "" },
+  });
+
+  const onSubmit = ({ email, password }: z.infer<typeof loginSchema>) => {
     login({ email, password });
   };
 
-  const form = useForm<{ email: string; password: string }>({
-    mode: "onChange",
-  });
   return (
     <Form {...form}>
       <form
@@ -44,6 +61,7 @@ const FormLogin = () => {
               <FormControl>
                 <Input type="email" placeholder="mail@example.com" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -56,6 +74,7 @@ const FormLogin = () => {
               <FormControl>
                 <Input type="password" {...field} />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />

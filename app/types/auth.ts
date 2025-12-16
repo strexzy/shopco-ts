@@ -9,7 +9,7 @@ export interface RegisterCredentials {
   email: string;
   firstName: string;
   password: string;
-  passwordConfim: string;
+  passwordConfirm: string;
 }
 
 export type AuthToken = string;

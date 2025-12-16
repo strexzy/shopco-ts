@@ -15,14 +15,14 @@ const Login = () => {
       <CardHeader>
         <CardTitle className="text-2xl text-center">Login</CardTitle>
         <CardDescription className="text-center">
-          Enter your email below to login to your account.
+          Login to your account to start using the service!
         </CardDescription>
       </CardHeader>
       <CardContent>
         <FormLogin />
       </CardContent>
       <CardFooter>
-        <Link className="text-sm" to="/auth/register">
+        <Link className="text-sm" to="/register">
           Don't have an account? Create one!
         </Link>
       </CardFooter>

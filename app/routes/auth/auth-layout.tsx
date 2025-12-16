@@ -1,8 +1,7 @@
 import { Outlet } from "react-router";
 import type { Route } from "../+types/home";
 import Logo from "~/assets/icons/basic/logo.svg";
-import { useAuth } from "~/context/AuthContext";
-import { Spinner } from "~/components/ui/spinner";
+import AuthRouteWrapper from "~/components/features/auth/AuthRouteWrapper";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "SHOP.CO Authentication page" },
@@ -11,12 +10,13 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Auth() {
-  const { currentUser } = useAuth();
-
   return (
-    <main className="w-full h-screen bg-primary-grey flex flex-col justify-center items-center gap-10">
-      <img src={Logo} alt="SHOP.CO Logo" className="w-70 " />
-      {typeof currentUser === "undefined" ? <Spinner /> : <Outlet />}
-    </main>
+    <AuthRouteWrapper>
+      <main className="w-full h-screen bg-primary-grey flex flex-col justify-center items-center gap-10">
+        <img src={Logo} alt="SHOP.CO Logo" className="w-70 " />
+        {<Outlet />}
+      </main>
+    </AuthRouteWrapper>
   );
 }
+// Future plans: add the "showpass" button, add forgot pass, add login through socials

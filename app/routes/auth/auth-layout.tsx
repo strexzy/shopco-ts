@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import type { Route } from "../+types/home";
 import Logo from "~/assets/icons/basic/logo.svg";
-import AuthRouteWrapper from "~/components/features/auth/AuthRouteWrapper";
+import AuthRouteWrapper from "~/components/auth/AuthRouteWrapper";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "SHOP.CO Authentication page" },

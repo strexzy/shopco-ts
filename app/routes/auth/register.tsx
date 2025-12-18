@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import FormRegister from "~/components/features/auth/FormRegister";
+import FormRegister from "~/components/auth/FormRegister";
 import { Link } from "react-router";
 
 const Register = () => {

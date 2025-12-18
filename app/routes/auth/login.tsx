@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import FormLogin from "~/components/features/auth/FormLogin";
+import FormLogin from "~/components/auth/FormLogin";
 import { Link } from "react-router";
 
 const Login = () => {

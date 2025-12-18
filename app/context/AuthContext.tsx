@@ -12,7 +12,7 @@ import type {
   AuthCredentials,
   RegisterCredentials,
 } from "~/types/auth";
-import { authApi } from "~/lib/api";
+import { authApi } from "~/features/auth/api";
 import { safeAxiosError } from "~/lib/safe-axios-error";
 
 const AuthContext = createContext<AuthContext | undefined>(undefined);

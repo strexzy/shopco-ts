@@ -1,21 +1,21 @@
 import {
   createContext,
+  type PropsWithChildren,
   useContext,
   useEffect,
   useState,
-  type PropsWithChildren,
 } from "react";
-import type {
-  User,
-  AuthError,
-  AuthContext,
-  AuthCredentials,
-  RegisterCredentials,
-} from "~/types/auth";
 import { authApi } from "~/features/auth/api";
 import { safeAxiosError } from "~/lib/safe-axios-error";
+import type {
+  AuthContextTypes,
+  AuthCredentials,
+  AuthError,
+  RegisterCredentials,
+  User,
+} from "~/types/auth";
 
-const AuthContext = createContext<AuthContext | undefined>(undefined);
+const AuthContext = createContext<AuthContextTypes | undefined>(undefined);
 
 export const AuthProvider = ({ children }: PropsWithChildren) => {
   const [currentUser, setCurrentUser] = useState<User | undefined | null>(
@@ -77,7 +77,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
         const { data } = await authApi.me();
         localStorage.setItem("authToken", data.authToken);
         setCurrentUser(data.user);
-      } catch (error) {
+      } catch {
         localStorage.removeItem("authToken");
         setCurrentUser(null);
       }

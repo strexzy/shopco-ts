@@ -1,7 +1,7 @@
+import { type PropsWithChildren, useEffect } from "react";
 import { useNavigate } from "react-router";
-import { useAuth } from "~/context/AuthContext";
 import { Spinner } from "~/components/ui/spinner";
-import { useEffect, type PropsWithChildren } from "react";
+import { useAuth } from "~/context/AuthContext";
 
 const AuthRouteWrapper = ({ children }: PropsWithChildren) => {
   const { currentUser } = useAuth();

@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+import FormRegister from "~/components/auth/form-register";
 import {
   Card,
   CardContent,
@@ -6,8 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import FormRegister from "~/components/auth/FormRegister";
-import { Link } from "react-router";
 
 const Register = () => {
   return (

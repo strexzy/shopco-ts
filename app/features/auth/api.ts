@@ -1,9 +1,9 @@
-import { http } from "~/lib/http";
 import { AUTH_ENDPOINTS } from "~/constants/constants";
+import { http } from "~/lib/http";
 import type {
   AuthCredentials,
-  RegisterCredentials,
   AuthResponse,
+  RegisterCredentials,
 } from "~/types/auth";
 
 export const authApi = {

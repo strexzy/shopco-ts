@@ -1,7 +1,8 @@
 import { Outlet } from "react-router";
-import type { Route } from "../+types/home";
 import Logo from "~/assets/icons/basic/logo.svg";
-import AuthRouteWrapper from "~/components/auth/AuthRouteWrapper";
+import AuthRouteWrapper from "~/components/auth/auth-route-wrapper";
+import type { Route } from "./+types/auth-layout";
+// biome-ignore lint/correctness/noEmptyPattern: <Router framework work feature>
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "SHOP.CO Authentication page" },
@@ -12,10 +13,10 @@ export function meta({}: Route.MetaArgs) {
 export default function Auth() {
   return (
     <AuthRouteWrapper>
-      <main className="w-full h-screen bg-primary-grey flex flex-col justify-center items-center gap-10">
+      <div className="w-full h-screen bg-primary-grey flex flex-col justify-center items-center gap-10">
         <img src={Logo} alt="SHOP.CO Logo" className="w-70 " />
         {<Outlet />}
-      </main>
+      </div>
     </AuthRouteWrapper>
   );
 }

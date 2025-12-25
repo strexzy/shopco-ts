@@ -1,17 +1,17 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
 import {
   Form,
-  FormItem,
-  FormLabel,
   FormControl,
   FormField,
+  FormItem,
+  FormLabel,
   FormMessage,
 } from "~/components/ui/form";
-import { useForm } from "react-hook-form";
+import { Input } from "~/components/ui/input";
 import { useAuth } from "~/context/AuthContext";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const registerSchema = z
   .object({

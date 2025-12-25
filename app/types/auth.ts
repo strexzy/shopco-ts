@@ -26,7 +26,7 @@ export interface User {
   role: "user" | "admin";
 }
 
-export interface AuthContext {
+export interface AuthContextTypes {
   currentUser: User | undefined | null;
   authError: AuthError | undefined | null;
   login: (data: AuthCredentials) => Promise<void>;

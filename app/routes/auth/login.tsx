@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+import FormLogin from "~/components/auth/form-login";
 import {
   Card,
   CardContent,
@@ -6,8 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "~/components/ui/card";
-import FormLogin from "~/components/auth/FormLogin";
-import { Link } from "react-router";
 
 const Login = () => {
   return (

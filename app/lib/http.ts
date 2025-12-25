@@ -1,4 +1,4 @@
-import axios, { AxiosError } from "axios";
+import axios, { type AxiosError } from "axios";
 import { API_URL } from "~/constants/constants";
 import { refreshToken } from "./refresh";
 
@@ -34,7 +34,7 @@ http.interceptors.response.use(
           }
           return http(originalRequest);
         }
-      } catch (e) {
+      } catch {
         localStorage.removeItem("authToken");
         window.location.href = "/login";
         return Promise.reject(error);

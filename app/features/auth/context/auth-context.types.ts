@@ -1,23 +1,9 @@
-export interface AuthCredentials {
-  email: string;
-  password: string;
-}
-
-export interface RegisterCredentials {
-  email: string;
-  firstName: string;
-  password: string;
-  passwordConfirm: string;
-}
-
-export type AuthToken = string;
+import type {
+  AuthCredentials,
+  RegisterCredentials,
+} from "../api/auth-api.types";
 
 export type AuthError = string;
-
-export interface AuthResponse {
-  authToken: AuthToken;
-  user: User;
-}
 
 export interface User {
   email: string;

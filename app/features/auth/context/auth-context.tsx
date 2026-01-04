@@ -8,12 +8,10 @@ import {
 import { safeAxiosError } from "~/shared";
 import { authApi } from "../api/auth-api";
 import type {
-  AuthContextTypes,
   AuthCredentials,
-  AuthError,
   RegisterCredentials,
-  User,
-} from "../types/auth.types";
+} from "../api/auth-api.types";
+import type { AuthContextTypes, AuthError, User } from "./auth-context.types";
 
 const AuthContext = createContext<AuthContextTypes | undefined>(undefined);
 

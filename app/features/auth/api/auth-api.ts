@@ -3,7 +3,7 @@ import type {
   AuthCredentials,
   AuthResponse,
   RegisterCredentials,
-} from "../types/auth.types";
+} from "./auth-api.types";
 
 export const authApi = {
   login: (data: AuthCredentials) =>

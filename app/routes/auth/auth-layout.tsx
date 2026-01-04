@@ -1,9 +1,8 @@
 import { Outlet } from "react-router";
 import Logo from "~/assets/icons/basic/logo.svg";
-import AuthRouteWrapper from "~/components/auth/auth-route-wrapper";
-import type { Route } from "./+types/auth-layout";
-// biome-ignore lint/correctness/noEmptyPattern: <Router framework work feature>
-export function meta({}: Route.MetaArgs) {
+import { AuthRouteWrapper } from "~/features";
+
+export function meta() {
   return [
     { title: "SHOP.CO Authentication page" },
     { name: "description", content: "Welcome to SHOP.CO!" },

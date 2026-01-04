@@ -1,10 +1,8 @@
-import { AppSidebar } from "~/components/shared/app-sidebar";
-import Header from "~/components/shared/header";
-import Promobar from "~/components/shared/promobar";
-import { SidebarProvider } from "~/components/ui/sidebar";
-import type { Route } from "./+types/home";
+import { Greeting } from "~/pages";
+import { SidebarProvider, useIsMobile } from "~/shared";
+import { AppSidebar, Header, Promobar } from "~/widgets";
 
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "SHOP.CO Clothing website" },
     { name: "description", content: "Welcome to SHOP.CO!" },
@@ -17,8 +15,10 @@ export default function Home() {
       <div className="w-full flex flex-col">
         <Promobar />
         <Header />
-        <AppSidebar />
-        <main className="bg-primary-grey">home</main>
+        {useIsMobile() && <AppSidebar />}
+        <main className="w-full h-full py-10 bg-primary-grey">
+          <Greeting />
+        </main>
       </div>
     </SidebarProvider>
   );

@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/correctness/useExhaustiveDependencies: <Shadcn UI code> */
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
@@ -13,7 +14,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "./sheet";
-import SideBarIcon from "./sidebarlogo.svg";
+import SideBarIcon from "~/assets/icons/basic/sidebarlogo.svg";
 import { Skeleton } from "./skeleton";
 import {
   Tooltip,

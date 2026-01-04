@@ -1,15 +1,8 @@
-import { Greeting } from "~/pages";
+import { Outlet } from "react-router";
 import { SidebarProvider, useIsMobile } from "~/shared";
 import { AppSidebar, Header, Promobar } from "~/widgets";
 
-export function meta() {
-  return [
-    { title: "SHOP.CO Clothing website" },
-    { name: "description", content: "Welcome to SHOP.CO!" },
-  ];
-}
-
-export default function Home() {
+const Shop = () => {
   return (
     <SidebarProvider>
       <div className="w-full flex flex-col">
@@ -17,9 +10,11 @@ export default function Home() {
         <Header />
         {useIsMobile() && <AppSidebar />}
         <main className="w-full h-full py-10 bg-primary-grey">
-          <Greeting />
+          <Outlet />
         </main>
       </div>
     </SidebarProvider>
   );
-}
+};
+
+export default Shop;

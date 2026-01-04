@@ -1,11 +1,14 @@
 import { Link } from "react-router";
+import GreetingImage from "~/assets/images/greeting.png";
 import { Button } from "~/shared";
+import BenefitsList from "./benefits-list";
+import Brands from "./brands";
 
 const Greeting = () => {
   return (
-    <div className="mx-4">
-      <div className="max-w-89.5 flex flex-col gap-5">
-        <div>
+    <>
+      <div className="mx-4 flex flex-col gap-6">
+        <div className="flex flex-col gap-5">
           <h1 className="text-4xl text-black font-extrabold">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
@@ -20,9 +23,15 @@ const Greeting = () => {
             Shop Now
           </Button>
         </Link>
-        <div></div>
+        <BenefitsList />
       </div>
-    </div>
+      <img
+        className="w-full"
+        src={GreetingImage}
+        alt="Fashionably dressed girl and guy"
+      />
+      <Brands />
+    </>
   );
 };
 

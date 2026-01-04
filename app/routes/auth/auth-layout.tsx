@@ -12,10 +12,10 @@ export function meta() {
 export default function Auth() {
   return (
     <AuthRouteWrapper>
-      <div className="w-full h-screen bg-primary-grey flex flex-col justify-center items-center gap-10">
+      <main className="w-full h-screen bg-primary-grey flex flex-col justify-center items-center gap-10">
         <img src={Logo} alt="SHOP.CO Logo" className="w-70 " />
         {<Outlet />}
-      </div>
+      </main>
     </AuthRouteWrapper>
   );
 }

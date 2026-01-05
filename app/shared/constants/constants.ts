@@ -7,3 +7,7 @@ export const AUTH_ENDPOINTS = {
   REFRESH: "/auth/refresh",
   REGISTER: "/auth/register",
 };
+
+export const PRODUCTS_ENDPOINTS = {
+  NEW_ARRIVALS: "/products/new-arrivals",
+};

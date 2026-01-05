@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import GreetingImage from "~/assets/images/greeting.png";
 import { Button } from "~/shared";
-import BenefitsList from "./benefits-list";
+import BenefitList from "./benefit-list";
 import Brands from "./brands";
 
 const Greeting = () => {
@@ -23,7 +23,7 @@ const Greeting = () => {
             Shop Now
           </Button>
         </Link>
-        <BenefitsList />
+        <BenefitList />
       </div>
       <img
         className="w-full"

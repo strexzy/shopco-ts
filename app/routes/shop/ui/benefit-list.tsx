@@ -1,6 +1,6 @@
 import Benefit from "./benefit";
 
-const BenefitsList = () => {
+const BenefitList = () => {
   return (
     <div className="w-full flex flex-col gap-3 items-center">
       <div className="w-full max-w-69.5 flex justify-between">
@@ -13,4 +13,4 @@ const BenefitsList = () => {
   );
 };
 
-export default BenefitsList;
+export default BenefitList;

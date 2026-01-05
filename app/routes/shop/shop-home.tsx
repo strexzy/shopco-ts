@@ -1,4 +1,5 @@
-import Greeting from "./ui/greeting";
+import Greeting from "./ui/section-greeting";
+import Products from "./ui/section-products";
 
 export function meta() {
   return [
@@ -11,6 +12,7 @@ function Home() {
   return (
     <>
       <Greeting />
+      <Products />
     </>
   );
 }

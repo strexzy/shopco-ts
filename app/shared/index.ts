@@ -11,6 +11,7 @@ export * from "./ui/input";
 export * from "./ui/item";
 export * from "./ui/label";
 export * from "./ui/logo";
+export * from "./ui/price";
 export * from "./ui/separator";
 export * from "./ui/sheet";
 export * from "./ui/sidebar";

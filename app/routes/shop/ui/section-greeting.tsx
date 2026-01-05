@@ -19,9 +19,7 @@ const Greeting = () => {
           </p>
         </div>
         <Link to="/shop">
-          <Button className="w-full h-13 rounded-full text-[16px]">
-            Shop Now
-          </Button>
+          <Button className="w-full h-13 rounded-full">Shop Now</Button>
         </Link>
         <BenefitList />
       </div>

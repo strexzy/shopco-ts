@@ -6,7 +6,7 @@ import Brands from "./brands";
 
 const Greeting = () => {
   return (
-    <>
+    <div className="bg-primary-grey pt-10">
       <div className="mx-4 flex flex-col gap-6">
         <div className="flex flex-col gap-5">
           <h1 className="text-4xl text-black font-extrabold">
@@ -29,7 +29,7 @@ const Greeting = () => {
         alt="Fashionably dressed girl and guy"
       />
       <Brands />
-    </>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import { PRODUCTS_ENDPOINTS } from "~/shared/constants/constants";
 
 const Products = () => {
   return (
-    <div className="w-full bg-white py-12.5 overflow-hidden">
+    <div className="w-full bg-white overflow-hidden">
       <div className="mx-4 flex flex-col gap-10">
         <div className="flex flex-col gap-8">
           <h2 className="text-[32px] text-black font-extrabold text-center">

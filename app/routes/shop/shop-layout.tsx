@@ -9,7 +9,7 @@ const Shop = () => {
         <Promobar />
         <Header />
         {useIsMobile() && <AppSidebar />}
-        <main className="w-full h-full py-10 bg-primary-grey">
+        <main className="w-full h-full">
           <Outlet />
         </main>
       </div>

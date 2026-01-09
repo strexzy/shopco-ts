@@ -11,3 +11,5 @@ export const AUTH_ENDPOINTS = {
 export const PRODUCTS_ENDPOINTS = {
   NEW_ARRIVALS: "/products/new-arrivals",
 };
+
+export const REVIEWS_ENDPOINT = "/reviews";

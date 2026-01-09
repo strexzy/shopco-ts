@@ -1,10 +1,14 @@
+import CasualBg from "~/assets/images/casual.png";
+import FormalBg from "~/assets/images/formal.png";
+import GymBg from "~/assets/images/gym.png";
+import PartyBg from "~/assets/images/party.png";
 import StyleCard from "./style-card";
 
 const styleList: { imageUrl: string; style: string }[] = [
-  { imageUrl: "./assets/images/casual.png", style: "Casual" },
-  { imageUrl: "./assets/images/formal.png", style: "Formal" },
-  { imageUrl: "./assets/images/party.png", style: "Party" },
-  { imageUrl: "./assets/images/gym.png", style: "Gym" },
+  { imageUrl: CasualBg, style: "Casual" },
+  { imageUrl: FormalBg, style: "Formal" },
+  { imageUrl: PartyBg, style: "Party" },
+  { imageUrl: GymBg, style: "Gym" },
 ];
 
 const Style = () => {

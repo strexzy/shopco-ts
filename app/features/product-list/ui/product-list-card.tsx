@@ -1,4 +1,5 @@
 import ProductImageExample from "~/assets/images/product-example.png";
+import { RatingDisplay } from "~/features/";
 import { Price } from "~/shared";
 
 type ProductListCardProps = {
@@ -26,8 +27,7 @@ const ProductListCard = ({
       </div>
       <div className="flex flex-col gap-0.5">
         <p className="text-black text-base font-medium">{name}</p>
-        <p className="text-black text-base font-medium">Rating: {rating}</p>
-        {/* RATING FEATURE CREATION NEEDED */}
+        <RatingDisplay rating={rating} />
         <Price price={price} discountPrice={discountPrice} />
       </div>
     </div>

@@ -11,8 +11,9 @@ const Products = () => {
             NEW ARRIVALS
           </h2>
           <ProductList
-            className="flex gap-4 overflow-scroll"
             listEndpoint={PRODUCTS_ENDPOINTS.NEW_ARRIVALS}
+            itemsQuantity={4}
+            className="flex gap-4 overflow-scroll"
           />
           <Button variant="outline" className="w-full h-13 rounded-full">
             View all
@@ -24,8 +25,9 @@ const Products = () => {
             TOP SELLING
           </h2>
           <ProductList
+            listEndpoint={PRODUCTS_ENDPOINTS.TOP_SELLING}
+            itemsQuantity={4}
             className="flex gap-4 overflow-scroll"
-            listEndpoint={PRODUCTS_ENDPOINTS.NEW_ARRIVALS}
           />
           <Button variant="outline" className="w-full h-13 rounded-full">
             View all

@@ -1,6 +1,7 @@
 import Greeting from "./ui/section-greeting";
 import Products from "./ui/section-products";
 import Style from "./ui/section-style";
+import ReviewCard from "~/features/reviews/ui/review-card";
 
 export function meta() {
   return [
@@ -15,6 +16,16 @@ function Home() {
       <Greeting />
       <Products />
       <Style />
+      <ReviewCard
+        review={{
+          id: "123",
+          author: "somebody",
+          text: "Good quality",
+          rating: 3.5,
+          date: "today",
+          productId: "444",
+        }}
+      />
     </div>
   );
 }

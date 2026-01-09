@@ -2,6 +2,7 @@
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
+import SideBarIcon from "~/assets/icons/basic/sidebarlogo.svg";
 import { useIsMobile } from "../hooks/use-mobile";
 import { cn } from "../lib/utils";
 import { Button } from "./button";
@@ -14,7 +15,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "./sheet";
-import SideBarIcon from "~/assets/icons/basic/sidebarlogo.svg";
 import { Skeleton } from "./skeleton";
 import {
   Tooltip,

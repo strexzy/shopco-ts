@@ -10,6 +10,7 @@ export const AUTH_ENDPOINTS = {
 
 export const PRODUCTS_ENDPOINTS = {
   NEW_ARRIVALS: "/products/new-arrivals",
+  TOP_SELLING: "/products/top-selling",
 };
 
 export const REVIEWS_ENDPOINT = "/reviews";

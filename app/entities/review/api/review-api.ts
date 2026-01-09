@@ -1,13 +1,12 @@
 import axios from "axios";
+import { http, REVIEWS_ENDPOINT } from "~/shared";
 import type { Review } from "../model/use-review-store.types";
-import { http } from "~/shared";
-import { REVIEWS_ENDPOINT } from "~/shared";
 import type {
+  DeleteReviewParams,
+  GetReviewListParams,
   GetReviewParams,
   PostReviewParams,
   UpdateReviewParams,
-  DeleteReviewParams,
-  GetReviewListParams,
 } from "./review-api.types";
 
 export const reviewsApi = {

@@ -1,7 +1,8 @@
 import Greeting from "./ui/section-greeting";
 import Products from "./ui/section-products";
 import Style from "./ui/section-style";
-import ReviewCard from "~/features/reviews/ui/review-card";
+import Reviews from "./ui/section-reviews";
+// import ReviewCard from "~/features/reviews/ui/review-card";
 
 export function meta() {
   return [
@@ -16,16 +17,17 @@ function Home() {
       <Greeting />
       <Products />
       <Style />
-      <ReviewCard
+      <Reviews />
+      {/* <ReviewCard
         review={{
           id: "123",
-          author: "somebody",
-          text: "Good quality",
+          author: "Ethan R.",
+          text: "Good quality Good qualityGood quality Good quality Good quality Good quality Good quality Good qualityGood quality Good qualityGood quality Good quality Good quality Good quality Good quality Good quality Good quality Good qualityGood quality Good quality Good quality Good quality Good quality Good quality Good quality Good qualityGood quality Good quality Good quality Good quality Good quality Good quality",
           rating: 3.5,
-          date: "today",
+          date: "January 11, 2025",
           productId: "444",
         }}
-      />
+      /> */}
     </div>
   );
 }

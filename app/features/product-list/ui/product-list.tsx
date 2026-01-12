@@ -7,8 +7,6 @@ type ProductListProps = {
   className?: string;
 };
 
-// Change useProductList hook usage to Router loaders data
-
 const ProductList = ({
   listEndpoint,
   itemsQuantity,

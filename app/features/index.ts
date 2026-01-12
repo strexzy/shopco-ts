@@ -7,5 +7,6 @@ export { default as FormRegister } from "./auth/ui/auth-form-register";
 export { default as AuthRouteWrapper } from "./auth/ui/auth-route-wrapper";
 export { default as ProductList } from "./product-list/ui/product-list";
 
+export * from "./reviews/hooks/use-review-list";
 export { default as RatingDisplay } from "./reviews/ui/rating-display";
 export { default as ReviewCard } from "./reviews/ui/review-card";

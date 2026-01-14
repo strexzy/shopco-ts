@@ -1,5 +1,5 @@
 import axios from "axios";
-import { http, REVIEWS_ENDPOINT } from "~/shared";
+import { API_URL, http, REVIEWS_ENDPOINT } from "~/shared";
 import type { Review } from "../model/use-review-store.types";
 import type {
   DeleteReviewParams,
@@ -11,13 +11,13 @@ import type {
 
 export const reviewApi = {
   getReview: ({ productId, reviewId }: GetReviewParams) =>
-    axios.get<Review>(`${REVIEWS_ENDPOINT}/${productId}/${reviewId}`),
+    axios.get<Review>(`${API_URL + REVIEWS_ENDPOINT}/${productId}/${reviewId}`),
   postReview: ({ productId, review }: PostReviewParams) =>
     http.post<Review>(`${REVIEWS_ENDPOINT}/${productId}`, review),
   updateReview: ({ productId, reviewId, review }: UpdateReviewParams) =>
     http.patch<Review>(`${REVIEWS_ENDPOINT}/${productId}/${reviewId}`, review),
   deleteReview: ({ productId, reviewId }: DeleteReviewParams) =>
     http.delete(`${REVIEWS_ENDPOINT}/${productId}/${reviewId}`),
-  getReviewList: (productId: GetReviewListParams) =>
-    axios.get<Review[]>(`${REVIEWS_ENDPOINT}/${productId}`),
+  getReviewList: ({ productId }: GetReviewListParams) =>
+    axios.get<Review[]>(`${API_URL + REVIEWS_ENDPOINT}/${productId}`),
 };

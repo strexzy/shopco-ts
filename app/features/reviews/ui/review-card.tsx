@@ -12,12 +12,12 @@ const ReviewCard = ({
 }: ReviewCardProps) => {
   return (
     <Link to={`/shop/${productId}`}>
-      <Card className="overflow-hidden w-full p-6 gap-4">
+      <Card className="overflow-hidden w-full gap-4">
         <div className="flex flex-col gap-3">
           <CardHeader>
             <RatingDisplay rating={rating} />
           </CardHeader>
-          <CardContent className="flex flex-col gap-3">
+          <CardContent className="flex flex-col gap-2">
             <p className="text-base text-black font-bold">{author}</p>
             <div className="max-h-25 overflow-scroll">
               <p className="text-sm text-gray-500">{`"${text}"`}</p>

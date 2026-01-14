@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import { type ReviewList, reviewApi } from "~/entities";
 import { safeAxiosError } from "~/shared";
-import { reviewApi, type ReviewList } from "~/entities";
 
 export function useReviewList(productId: string) {
   const [data, setData] = useState<ReviewList | null>(null);

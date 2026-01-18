@@ -41,7 +41,7 @@ const OffersForm = () => {
   };
 
   return (
-    <>
+    <div>
       <div className="bg-white">
         <div className="mx-4 bg-black rounded-t-[20px] p-6 pb-0">
           <h2 className="text-[32px] text-white font-extrabold leading-none">
@@ -49,43 +49,41 @@ const OffersForm = () => {
           </h2>
         </div>
       </div>
-      <div className="bg-primary-grey">
-        <div className="mx-4 bg-black rounded-b-[20px] p-6 pt-6">
-          <Form {...form}>
-            <form
-              className="flex flex-col gap-3"
-              onSubmit={form.handleSubmit(onSubmit)}
-            >
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        type="email"
-                        className="bg-white rounded-full placeholder:font-light"
-                        placeholder="Enter your email address"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button className="w-full bg-white rounded-full text-black font-light">
-                Subscribe to Newsletter
-              </Button>
-              {subscribeError && (
-                <div className="text-red-500 text-sm text-center">
-                  {subscribeError}
-                </div>
+      <div className="mx-4 bg-black rounded-b-[20px] p-6 pt-6">
+        <Form {...form}>
+          <form
+            className="flex flex-col gap-3"
+            onSubmit={form.handleSubmit(onSubmit)}
+          >
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input
+                      {...field}
+                      type="email"
+                      className="bg-white rounded-full placeholder:font-light"
+                      placeholder="Enter your email address"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
               )}
-            </form>
-          </Form>
-        </div>
+            />
+            <Button className="w-full bg-white rounded-full text-black font-light">
+              Subscribe to Newsletter
+            </Button>
+            {subscribeError && (
+              <div className="text-red-500 text-sm text-center">
+                {subscribeError}
+              </div>
+            )}
+          </form>
+        </Form>
       </div>
-    </>
+    </div>
   );
 };
 

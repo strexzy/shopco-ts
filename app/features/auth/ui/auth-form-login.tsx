@@ -35,7 +35,7 @@ const loginSchema = z.object({
 });
 
 const FormLogin = () => {
-  const { login } = useAuth();
+  const { login, authError } = useAuth();
 
   const form = useForm<z.infer<typeof loginSchema>>({
     resolver: zodResolver(loginSchema),
@@ -78,6 +78,9 @@ const FormLogin = () => {
             </FormItem>
           )}
         />
+        {authError && (
+          <div className="text-red-500 text-sm text-center">{authError}</div>
+        )}
         <Button className="w-full">Sign in</Button>
       </form>
     </Form>

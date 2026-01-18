@@ -10,3 +10,5 @@ export { default as ProductList } from "./product-list/ui/product-list";
 export * from "./reviews/hooks/use-review-list";
 export { default as RatingDisplay } from "./reviews/ui/rating-display";
 export { default as ReviewCard } from "./reviews/ui/review-card";
+
+export * from "./offers/api/offers-api";

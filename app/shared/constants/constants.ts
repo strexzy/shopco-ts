@@ -14,3 +14,5 @@ export const PRODUCTS_ENDPOINTS = {
 };
 
 export const REVIEWS_ENDPOINT = "/reviews";
+
+export const OFFERS_ENDPOINT = "/offers";

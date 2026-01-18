@@ -3,9 +3,9 @@ import ReviewsSlider from "./reviews-slider";
 const Reviews = () => {
   return (
     <ReviewsSlider>
-      <h1 className="flex-1 min-w-0 text-4xl text-black font-extrabold">
+      <h2 className="flex-1 min-w-0 text-[32px] text-black font-extrabold leading-none">
         OUR HAPPY CUSTOMERS
-      </h1>
+      </h2>
     </ReviewsSlider>
   );
 };

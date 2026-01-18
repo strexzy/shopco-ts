@@ -5,7 +5,7 @@ import { Logo, SidebarTrigger } from "~/shared";
 
 const Header = () => {
   return (
-    <header className="w-full flex px-4 py-5 justify-between items-center">
+    <header className="flex px-4 py-5 justify-between items-center">
       <div className="flex items-center gap-4">
         <SidebarTrigger />
         <Logo />

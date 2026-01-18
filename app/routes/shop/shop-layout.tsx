@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { SidebarProvider, useIsMobile } from "~/shared";
-import { AppSidebar, Header, Promobar } from "~/widgets";
+import { AppSidebar, Footer, Header, Promobar } from "~/widgets";
 
 const Shop = () => {
   return (
@@ -12,6 +12,7 @@ const Shop = () => {
         <main className="w-full h-full">
           <Outlet />
         </main>
+        <Footer />
       </div>
     </SidebarProvider>
   );

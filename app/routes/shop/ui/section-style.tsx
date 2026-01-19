@@ -18,10 +18,27 @@ const Style = () => {
         <h2 className="text-[32px] text-black font-extrabold text-center">
           BROWSE BY DRESS STYLE
         </h2>
-        <div className="w-full flex flex-col gap-4">
-          {styleList.map(({ imageUrl, style }, idx) => (
-            <StyleCard key={idx + style} imageUrl={imageUrl} style={style} />
-          ))}
+        <div className="w-full grid grid-rows-4 gap-4 md:grid-rows-2 md:grid-cols-5">
+          <StyleCard
+            imageUrl={styleList[0].imageUrl}
+            style={styleList[0].style}
+            className="md:col-span-2"
+          />
+          <StyleCard
+            imageUrl={styleList[1].imageUrl}
+            style={styleList[1].style}
+            className="md:col-span-3"
+          />
+          <StyleCard
+            imageUrl={styleList[2].imageUrl}
+            style={styleList[2].style}
+            className="md:col-span-3"
+          />
+          <StyleCard
+            imageUrl={styleList[3].imageUrl}
+            style={styleList[3].style}
+            className="md:col-span-2"
+          />
         </div>
       </div>
     </div>

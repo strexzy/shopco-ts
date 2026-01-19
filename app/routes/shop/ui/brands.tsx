@@ -14,7 +14,7 @@ const brands = [
 
 const Brands = () => {
   return (
-    <div className="bg-black py-10 flex flex-wrap justify-center gap-8.5">
+    <div className="bg-black py-10 flex flex-wrap justify-center gap-8.5 md:p-10 md:justify-between">
       {brands.map((brand) => (
         <img
           key={brand.id}

@@ -60,7 +60,7 @@ const registerSchema = z
   });
 
 const FormRegister = () => {
-  const { register } = useAuth();
+  const { register, authError } = useAuth();
 
   const form = useForm<z.infer<typeof registerSchema>>({
     resolver: zodResolver(registerSchema),
@@ -139,6 +139,9 @@ const FormRegister = () => {
             </FormItem>
           )}
         />
+        {authError && (
+          <div className="text-red-500 text-sm text-center">{authError}</div>
+        )}
         <Button className="w-full">Sign up</Button>
       </form>
     </Form>

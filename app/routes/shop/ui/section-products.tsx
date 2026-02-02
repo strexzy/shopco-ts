@@ -1,8 +1,9 @@
+import { useLoaderData } from "react-router";
 import { ProductList } from "~/features";
 import { Button } from "~/shared";
-import { PRODUCTS_ENDPOINTS } from "~/shared/constants/constants";
 
 const Products = () => {
+  const { newArrivals, topSelling } = useLoaderData();
   return (
     <div className="bg-white overflow-hidden">
       <div className="mx-4 flex flex-col gap-10">
@@ -11,7 +12,7 @@ const Products = () => {
             NEW ARRIVALS
           </h2>
           <ProductList
-            listEndpoint={PRODUCTS_ENDPOINTS.NEW_ARRIVALS}
+            productList={newArrivals}
             itemsQuantity={4}
             className="flex gap-4 overflow-scroll"
           />
@@ -28,7 +29,7 @@ const Products = () => {
             TOP SELLING
           </h2>
           <ProductList
-            listEndpoint={PRODUCTS_ENDPOINTS.TOP_SELLING}
+            productList={topSelling}
             itemsQuantity={4}
             className="flex gap-4 overflow-scroll"
           />

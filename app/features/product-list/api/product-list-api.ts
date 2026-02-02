@@ -1,6 +1,6 @@
-import { http } from "~/shared";
+import axios from "axios";
 import type { ProductList } from "./product-list-api.types";
 
 export const productListApi = {
-  getList: (listEndpoint: string) => http.get<ProductList>(listEndpoint),
+  getList: (listEndpoint: string) => axios.get<ProductList>(listEndpoint),
 };

@@ -1,5 +1,5 @@
 import axios, { type AxiosError } from "axios";
-import { API_URL } from "~/shared/constants/constants";
+import { API_URL } from "~/shared";
 import { refreshToken } from "./refresh";
 
 export const http = axios.create({

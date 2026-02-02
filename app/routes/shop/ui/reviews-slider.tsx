@@ -1,17 +1,13 @@
 import { useState } from "react";
+import { useLoaderData } from "react-router";
 import ArrowLeft from "~/assets/icons/basic/arrowL.svg";
 import ArrowRight from "~/assets/icons/basic/arrowR.svg";
-import { ReviewCard, useReviewList } from "~/features";
+import { ReviewCard } from "~/features";
 
 const ReviewsSlider = ({ children }: React.PropsWithChildren) => {
+  const { reviewList } = useLoaderData();
   const [currentReview, setCurrentReview] = useState<number>(0);
 
-  const { data: reviewList, loading, error } = useReviewList("shopco");
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!reviewList || reviewList.length === 0)
-    return <div>No products found</div>;
   return (
     <div className="mx-4 flex flex-col gap-6">
       <div className="flex items-end justify-between">

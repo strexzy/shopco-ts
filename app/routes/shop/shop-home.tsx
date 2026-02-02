@@ -1,3 +1,4 @@
+import { shopHomeLoader } from "./loaders/shop-home-loader";
 import Greeting from "./ui/section-greeting";
 import Products from "./ui/section-products";
 import Reviews from "./ui/section-reviews";
@@ -9,6 +10,8 @@ export function meta() {
     { name: "description", content: "Welcome to SHOP.CO!" },
   ];
 }
+
+export const loader = shopHomeLoader;
 
 function Home() {
   return (

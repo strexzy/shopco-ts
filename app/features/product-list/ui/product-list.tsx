@@ -1,24 +1,18 @@
+import type { ProductList as ProductListType } from "../api/product-list-api.types";
 import { useProductList } from "../hooks/use-product-list";
 import ProductListCard from "./product-list-card";
 
 type ProductListProps = {
-  listEndpoint: string;
+  productList: ProductListType;
   itemsQuantity?: number;
   className?: string;
 };
 
 const ProductList = ({
-  listEndpoint,
+  productList,
   itemsQuantity,
   className,
 }: ProductListProps) => {
-  const { data: productList, loading, error } = useProductList(listEndpoint);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-  if (!productList || productList.length === 0)
-    return <div>No products found</div>;
-
   if (itemsQuantity)
     return (
       <div className={className}>

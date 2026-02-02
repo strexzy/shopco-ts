@@ -1,5 +1,4 @@
 import type { ProductList as ProductListType } from "../api/product-list-api.types";
-import { useProductList } from "../hooks/use-product-list";
 import ProductListCard from "./product-list-card";
 
 type ProductListProps = {

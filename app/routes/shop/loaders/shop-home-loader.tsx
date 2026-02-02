@@ -5,12 +5,13 @@ import type { ProductList } from "~/features/product-list/api/product-list-api.t
 import { API_URL, PRODUCTS_ENDPOINTS, safeAxiosError } from "~/shared";
 
 export interface ShopHomeLoaderData {
-  newArrivals: ProductList;
-  topSelling: ProductList;
-  reviewList: ReviewList;
+  newArrivals: ProductList | null;
+  topSelling: ProductList | null;
+  reviewList: ReviewList | null;
+  error?: string;
 }
 
-export const shopHomeLoader = async () => {
+export const shopHomeLoader = async (): Promise<ShopHomeLoaderData> => {
   try {
     const [newArrivals, topSelling, reviewList] = await Promise.all([
       productListApi.getList(API_URL + PRODUCTS_ENDPOINTS.NEW_ARRIVALS),
@@ -22,12 +23,19 @@ export const shopHomeLoader = async () => {
       newArrivals: newArrivals.data,
       topSelling: topSelling.data,
       reviewList: reviewList.data,
-    };
+    } satisfies ShopHomeLoaderData;
   } catch (error) {
+    // Logic for potential api bug report
     const msg = safeAxiosError(error);
-    throw new Response("Failed to load data", {
-      status: 500,
-      statusText: msg,
-    });
+    // throw new Response("Failed to load data", {
+    //   status: 500,
+    //   statusText: msg,
+    // });
+    return {
+      newArrivals: null,
+      topSelling: null,
+      reviewList: null,
+      error: msg,
+    };
   }
 };

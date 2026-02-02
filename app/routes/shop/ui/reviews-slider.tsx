@@ -3,9 +3,10 @@ import { useLoaderData } from "react-router";
 import ArrowLeft from "~/assets/icons/basic/arrowL.svg";
 import ArrowRight from "~/assets/icons/basic/arrowR.svg";
 import { ReviewCard } from "~/features";
+import { Spinner } from "~/shared";
 
 const ReviewsSlider = ({ children }: React.PropsWithChildren) => {
-  const { reviewList } = useLoaderData();
+  const { reviewList, error } = useLoaderData();
   const [currentReview, setCurrentReview] = useState<number>(0);
 
   return (
@@ -35,7 +36,14 @@ const ReviewsSlider = ({ children }: React.PropsWithChildren) => {
           />
         </div>
       </div>
-      <ReviewCard review={reviewList[currentReview]} />
+      {error ? (
+        <div className="flex flex-col items-center gap-3">
+          <Spinner />
+          <p>{error}</p>
+        </div>
+      ) : (
+        <ReviewCard review={reviewList[currentReview]} />
+      )}
     </div>
   );
 };

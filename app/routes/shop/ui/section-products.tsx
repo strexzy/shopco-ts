@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router";
 import { ProductList } from "~/features";
-import { Button, Spinner } from "~/shared";
+import { Button } from "~/shared";
 
 const Products = () => {
   const { newArrivals, topSelling, error } = useLoaderData();
@@ -11,18 +11,12 @@ const Products = () => {
           <h2 className="text-[32px] text-black font-extrabold text-center">
             NEW ARRIVALS
           </h2>
-          {error ? (
-            <div className="flex flex-col items-center gap-3">
-              <Spinner />
-              <p>{error}</p>
-            </div>
-          ) : (
-            <ProductList
-              productList={newArrivals}
-              itemsQuantity={4}
-              className="flex gap-4 overflow-scroll"
-            />
-          )}
+          <ProductList
+            productList={newArrivals}
+            error={error}
+            itemsQuantity={4}
+            className="flex gap-4 overflow-scroll"
+          />
           <Button
             variant="outline"
             className="w-full h-13 rounded-full md:w-1/4"
@@ -35,18 +29,12 @@ const Products = () => {
           <h2 className="text-[32px] text-black font-extrabold text-center">
             TOP SELLING
           </h2>
-          {error ? (
-            <div className="flex flex-col items-center gap-3">
-              <Spinner />
-              <p>{error}</p>
-            </div>
-          ) : (
-            <ProductList
-              productList={topSelling}
-              itemsQuantity={4}
-              className="flex gap-4 overflow-scroll"
-            />
-          )}
+          <ProductList
+            productList={topSelling}
+            error={error}
+            itemsQuantity={4}
+            className="flex gap-4 overflow-scroll"
+          />
           <Button
             variant="outline"
             className="w-full h-13 rounded-full md:w-1/4"

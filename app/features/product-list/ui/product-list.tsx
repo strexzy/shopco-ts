@@ -3,7 +3,7 @@ import type { ProductList as ProductListType } from "../api/product-list-api.typ
 import ProductListCard from "./product-list-card";
 
 type ProductListProps = {
-  productList: ProductListType;
+  productList: ProductListType | null;
   error?: string;
   itemsQuantity?: number;
   className?: string;
@@ -15,11 +15,11 @@ const ProductList = ({
   itemsQuantity,
   className,
 }: ProductListProps) => {
-  if (error) {
+  if (productList === null || error) {
     return (
       <div className="w-full h-full flex flex-col items-center gap-3">
         <Spinner />
-        <p>{error}</p>
+        <p>{error ? error : "Unknown error, please try again later..."}</p>
       </div>
     );
   }

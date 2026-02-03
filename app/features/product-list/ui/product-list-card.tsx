@@ -1,17 +1,10 @@
 import ProductImageExample from "~/assets/images/product-example.png";
 import { RatingDisplay } from "~/features/";
 import { Price } from "~/shared";
+import type { ProductListProduct } from "../api/product-list-api.types";
 
 type ProductListCardProps = {
-  product: {
-    id: string;
-    slug: string;
-    name: string;
-    price: number;
-    discountPrice?: number;
-    images: string[];
-    rating: number;
-  };
+  product: ProductListProduct;
 };
 
 // id & slug for navigation onclick logic

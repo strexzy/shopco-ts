@@ -1,15 +1,28 @@
 import { Link } from "react-router";
 import type { Review } from "~/entities";
-import { Card, CardContent, CardFooter, CardHeader } from "~/shared";
+import { Card, CardContent, CardFooter, CardHeader, Spinner } from "~/shared";
 import RatingDisplay from "./rating-display";
 
 type ReviewCardProps = {
-  review: Review;
+  review: Review | null;
+  error?: string;
 };
 
-const ReviewCard = ({
-  review: { author, text, rating, date, productId },
-}: ReviewCardProps) => {
+const ReviewCard = ({ review, error }: ReviewCardProps) => {
+  if (review === null || error)
+    return (
+      <Card className="overflow-hidden w-full gap-4">
+        <div className="flex flex-col gap-3">
+          <CardContent className="flex flex-col items-center gap-2">
+            <Spinner />
+            <p>{error}</p>
+          </CardContent>
+        </div>
+      </Card>
+    );
+
+  const { author, text, rating, date, productId } = review;
+
   return (
     <Link to={`/shop/${productId}`}>
       <Card className="overflow-hidden w-full gap-4">

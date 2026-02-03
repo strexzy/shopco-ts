@@ -1,9 +1,11 @@
 import { useLoaderData } from "react-router";
 import { ProductList } from "~/features";
 import { Button } from "~/shared";
+import type { ShopHomeLoaderData } from "../loaders/shop-home-loader";
 
 const Products = () => {
-  const { newArrivals, topSelling, error } = useLoaderData();
+  const { newArrivals, topSelling, error } =
+    useLoaderData<ShopHomeLoaderData>();
   return (
     <div className="bg-white overflow-hidden">
       <div className="mx-4 flex flex-col gap-10">

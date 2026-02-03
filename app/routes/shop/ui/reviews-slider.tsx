@@ -3,11 +3,33 @@ import { useLoaderData } from "react-router";
 import ArrowLeft from "~/assets/icons/basic/arrowL.svg";
 import ArrowRight from "~/assets/icons/basic/arrowR.svg";
 import { ReviewCard } from "~/features";
-import { Spinner } from "~/shared";
+import type { ShopHomeLoaderData } from "../loaders/shop-home-loader";
 
 const ReviewsSlider = ({ children }: React.PropsWithChildren) => {
-  const { reviewList, error } = useLoaderData();
+  const { reviewList, error } = useLoaderData<ShopHomeLoaderData>();
   const [currentReview, setCurrentReview] = useState<number>(0);
+
+  if (reviewList === null || error)
+    return (
+      <div className="mx-4 flex flex-col gap-6">
+        <div className="flex items-end justify-between">
+          {children}
+          <div className="flex gap-4">
+            <img
+              src={ArrowLeft}
+              alt="Button arrow left icon"
+              className="w-6 h-6"
+            />
+            <img
+              src={ArrowRight}
+              alt="Button arrow right icon"
+              className="w-6 h-6"
+            />
+          </div>
+        </div>
+        <ReviewCard error={error} review={null} />
+      </div>
+    );
 
   return (
     <div className="mx-4 flex flex-col gap-6">
@@ -36,14 +58,7 @@ const ReviewsSlider = ({ children }: React.PropsWithChildren) => {
           />
         </div>
       </div>
-      {error ? (
-        <div className="flex flex-col items-center gap-3">
-          <Spinner />
-          <p>{error}</p>
-        </div>
-      ) : (
-        <ReviewCard review={reviewList[currentReview]} />
-      )}
+      <ReviewCard error={error} review={reviewList[currentReview]} />
     </div>
   );
 };
